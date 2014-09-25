@@ -1,0 +1,51 @@
+{
+  "Name": "販売",
+  "Id": 1,
+  "Elems": [
+    {
+      "Number": 1,
+      "Minutes": 15,
+      "Explanation": "商品をx1倍売ります。そんなに多くないです"
+    },
+    {
+      "Number": 2,
+      "Minutes": 30,
+      "Explanation": "商品をx1.5倍売ります"
+    },
+    {
+      "Number": 3,
+      "Minutes": 45,
+      "Expalanation": "高額商品を選んで売ります(x0.5)"
+    },
+    {
+      "Number": 4,
+      "Minutes": 60,
+      "Explanation": "商品をx2.0倍売ります"
+    },
+    {
+      "Number": 5,
+      "Minutes": 90,
+      "Explanation": "小物を沢山売ります(x4)"
+    },
+    {
+      "Number": 6,
+      "Minutes": 120,
+      "Explanation": "商品をx3.0売ります"
+    },
+    {
+      "Number": 7,
+      "Minutes": 180,
+      "Explanation": "高額商品を選んで売ります(x1)"
+    },
+    {
+      "Number": 8,
+      "Minutes": 240,
+      "Explanation": "商品をx4.0売ります"
+    },
+    {
+      "Number": 9,
+      "Minutes": 720,
+      "Expalanation": "この歯車の好きな効果を発動できます"
+    }
+  ]
+}
