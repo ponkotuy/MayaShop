@@ -8,10 +8,10 @@ import (
 func main() {
 	m := martini.Classic()
 	m.Group("/api/v1", func(r martini.Router) {
-		r.Get("/", Hello)
 		r.Post("/user/create", binding.Bind(UserForm{}), CreateUser)
 		r.Get("/gear/all", GearAll)
 	})
+	m.Get("**", GetPublic)
 	m.Run()
 }
 
