@@ -4,13 +4,33 @@ import (
 	"math"
 	"log"
 	"os"
+	"bytes"
 	"encoding/json"
 	"github.com/go-martini/martini"
+	"github.com/martini-contrib/auth"
 	"./model"
+	"./lib"
 )
 
+func MayaAuth(uName, passwd string) bool {
+	var user model.User
+	err := MayaDB.Col("user").First(map[string]string{"Name": uName}, &user)
+	if err != nil { return false }
+	hashed := lib.CreatePasswordHash(passwd, user.Salt)
+	return bytes.Equal(hashed, user.Passwd)
+}
+
+func UserInfo(authUser auth.User) (int, string) {
+	var user model.User
+	err := MayaDB.Col("user").First(map[string]string{"Name": string(authUser)}, &user)
+	if err != nil { return 500, "DB Error" }
+	js, err := json.Marshal(user)
+	if err != nil { return 500, "JSON Error" }
+	return 200, string(js)
+}
+
 func CreateUser(form UserForm) (int, string) {
-	user := model.NewUser(form.Name)
+	user := model.NewUser(form.Name, form.Passwd)
 	user.Wares = append(user.Wares,
 		model.NewWaresRecord(1, 20),
 		model.NewWaresRecord(2, 15),

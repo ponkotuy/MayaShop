@@ -1,18 +1,24 @@
 package model
 
-import ara "github.com/diegogub/aranGO"
+import (
+	ara "github.com/diegogub/aranGO"
+	"../lib"
+)
 
 type User struct {
 	Name string
+	Passwd []byte
+	Salt []byte
 	Coin int64
 	Wares []WaresRecord
 	Workers []Worker
 	ara.Document
 }
 
-func NewUser(name string) User {
+func NewUser(name string, passwd string) User {
 	var u User
 	u.Name = name
+	u.Passwd, u.Salt = lib.PasswordSalt(passwd)
 	u.Wares = make([]WaresRecord, 0)
 	u.Workers = make([]Worker, 0)
 	return u
