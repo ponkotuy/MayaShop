@@ -1,0 +1,15 @@
+# -*- coding:utf-8 -*-
+
+#+TITLE: MayaShop
+#+AUTHOR: ぽんこつ
+#+EMAIL: web@ponkotuy.com
+#+LANGUAGE: ja
+
+** サーバの立ち上げ
+#+BEGIN_SRC sh
+   go get
+   go get github.com/codegangsta/gin
+   gin
+#+END_SRC
+
+   http://qiita.com/voluntas/items/741547a05598260fccfc
