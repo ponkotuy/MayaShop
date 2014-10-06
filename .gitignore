@@ -27,3 +27,9 @@ gin-bin
 
 # Emacs
 *~
+
+# npm & Grant & TypeScript
+public/js/*.js
+public/js/*.map
+ts/node_modules/
+ts/typings/

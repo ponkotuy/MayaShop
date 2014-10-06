@@ -13,3 +13,13 @@
 #+END_SRC
 
    http://qiita.com/voluntas/items/741547a05598260fccfc
+
+** DefinitelyTypedFileのインストール
+
+** TypeScriptのコンパイル
+#+BEGIN_SRC sh
+   cd ts/
+   npm install typescript -g
+   npm install tsd -g
+   npm install
+#+END_SRC
